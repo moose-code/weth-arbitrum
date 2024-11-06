@@ -1,0 +1,15 @@
+type AeWETH_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type AeWETH_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  data: String!
+}
+

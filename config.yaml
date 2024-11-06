@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: aeWETH
+    address:
+    - 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: Transfer(address indexed from, address indexed to, uint256 value, bytes data)
+rollback_on_reorg: false
